@@ -8,11 +8,12 @@
 */
 
 #include<iostream>
+#include<string>
 using namespace std;
 
 int main(){
-    char* name = "ljc";
-    char* address = "zhongguo,neimenggu";
+    string name = "ljc";
+    string address = "zhongguo,neimenggu";
 
     cout<< name<<","<<address;
 }
