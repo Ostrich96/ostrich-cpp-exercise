@@ -16,4 +16,6 @@ int main(){
     string address = "zhongguo,neimenggu";
 
     cout<< name<<","<<address;
+    return 0;
+    
 }
