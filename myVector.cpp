@@ -8,7 +8,7 @@ class myVector{
     */
         explicit myVector(int initSize = 0): theSize(initSize),theCapacity(initSize+ SPARE_CAPACITY)
         {
-            objects = new Objects[ theCapacity]
+            objects = new Object[theCapacity];
         }
         // copy constuctor, objects(nullptr)
         myVector(const myVector& rhs):theSize(rhs.theSize),theCapacity(rhs.theCapacity),objects(nullptr){
@@ -28,7 +28,7 @@ class myVector{
             std::swap(theCapacity,rhs.theCapacity);
             std::swap(objects , rhs.objects);
 
-            return *this
+            return *this;
         }
         
         // destructor
@@ -36,7 +36,7 @@ class myVector{
             delete[] objects;
         }
         // moving constructor
-        myVector(myVector&& rhs):theSize(theSize),theCapacity(theCapacity),objects(rhs.objects){=
+        myVector(myVector&& rhs):theSize(theSize),theCapacity(theCapacity),objects(rhs.objects){
             rhs.theSize = 0;
             rhs.objects = nullptr;
             rhs.theCapacity = 0;
@@ -49,7 +49,7 @@ class myVector{
             }
             Object *newArray = new Object[newCapacity];//creat new array
             for(int i = 0; i < theSize; i++){
-                newArray[k] = std::move(objects[k]); //move rvalue
+                newArray[i] = std::move(objects[i]); //move rvalue
             }
             theCapacity = newCapacity;
             std::swap(objects,newArray);// swap the pointer
@@ -57,7 +57,7 @@ class myVector{
         }
         void resize(int newSize){
             if(newSize > theCapacity){
-                reserve(newSize*2)//keep the capacity twice as much as the size
+                reserve(newSize*2);//keep the capacity twice as much as the size
             }
             theSize = newSize;
         }
